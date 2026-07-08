@@ -35,7 +35,9 @@ export class RestaurantStore {
     return counter;
   }
   get completedTables() {
-    //calculate the number of tables that have been completed
+    let counter = 0;
+    this.reservations.forEach((r) => (r.completed ? counter++ : null));
+    return counter;
   }
   addRes = (name, numPeople) => {
     this.reservations.push(new Reservation(name, numPeople));
