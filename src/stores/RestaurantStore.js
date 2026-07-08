@@ -43,7 +43,8 @@ export class RestaurantStore {
     this.reservations.push(new Reservation(name, numPeople));
   };
   seatRes = (id) => {
-    //find the reservation and change its seated value to true
+    let reservationToMark = this.reservations.find((r) => r.id === id);
+    reservationToMark.seated = true;
   };
   completeRes = (id) => {
     let reservationToMark = this.reservations.find((r) => r.id === id);
