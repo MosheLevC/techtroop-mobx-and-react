@@ -20,7 +20,6 @@ export class RestaurantStore {
   }
 
   get totalReservations() {
-    //automatically calculates the total reservations
     return this.reservations.length;
   }
   get openTables() {
@@ -49,7 +48,5 @@ export class RestaurantStore {
   completeRes = (id) => {
     let reservationToMark = this.reservations.find((r) => r.id === id);
     reservationToMark.completed = true;
-    //after you write this function, add some conditional rendering on compelted tables
-    //e.g. strike through our a different color - this will happen on your react, not here.
   };
 }
