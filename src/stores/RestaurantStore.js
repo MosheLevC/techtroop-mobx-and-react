@@ -30,8 +30,9 @@ export class RestaurantStore {
     return this.numTables - counter;
   }
   get restPopulation() {
-    // calculate the number of people in the restaurant now
-    // (e.g. total number of people who are seated, but their reservation is not complete)
+    let counter = 0;
+    this.reservations.forEach((r) => (r.seated && !r.completed ? counter++ : null));
+    return counter;
   }
   get completedTables() {
     //calculate the number of tables that have been completed
