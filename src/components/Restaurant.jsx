@@ -8,7 +8,7 @@ class Restaurant extends Component {
       <div>
         <span>You have {this.props.RestaurantStore.openTables} open tables</span>
         <div>You have {this.props.RestaurantStore.restPopulation} people in the resturant</div>
-        {/* Add in # of completed tables with id "completedTables*/}
+        <div>You have {this.props.RestaurantStore.completedTables} completed tables in the resturant</div>
         <ResInput />
         <button id="addRes">Add Reservation</button>
         {/* Make the Add Reservation button work */}
