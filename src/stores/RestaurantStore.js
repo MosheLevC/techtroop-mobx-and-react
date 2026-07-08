@@ -23,14 +23,13 @@ export class RestaurantStore {
     return this.reservations.length;
   }
   get openTables() {
-    //automatically caluclates the number of tables avalible, only when the state is affected
     let counter = 0;
     this.reservations.forEach((r) => (r.seated ? counter++ : null));
     return this.numTables - counter;
   }
   get restPopulation() {
     let counter = 0;
-    this.reservations.forEach((r) => (r.seated && !r.completed ? counter++ : null));
+    this.reservations.forEach((r) => (r.seated && !r.completed ? (counter += Number(r.numPeople)) : null));
     return counter;
   }
   get completedTables() {
