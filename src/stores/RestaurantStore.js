@@ -46,7 +46,8 @@ export class RestaurantStore {
     //find the reservation and change its seated value to true
   };
   completeRes = (id) => {
-    //find the reservation and mark it as completed
+    let reservationToMark = this.reservations.find((r) => r.id === id);
+    reservationToMark.completed = true;
     //after you write this function, add some conditional rendering on compelted tables
     //e.g. strike through our a different color - this will happen on your react, not here.
   };
